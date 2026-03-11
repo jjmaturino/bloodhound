@@ -1,0 +1,66 @@
+000000 INFO S0 Starting up
+000000 INFO S1 Starting up
+000000 INFO S2 Starting up
+000001 TIMR S0 Election timer started
+000001 TIMR S1 Election timer started
+000001 TIMR S2 Election timer started
+000045 TIMR S2 Election timeout elapsed
+000046 VOTE S2 Becoming candidate for term 1
+000047 VOTE S2 Requesting vote from S0
+000047 VOTE S2 Requesting vote from S1
+000052 VOTE S0 Granting vote to S2 for term 1
+000053 VOTE S1 Granting vote to S2 for term 1
+000054 LEAD S2 Became leader for term 1
+000055 TIMR S2 Leader, checking heartbeats
+000056 LOG1 S2 Sending AppendEntries to S0
+000056 LOG1 S2 Sending AppendEntries to S1
+000060 LOG1 S0 Received AppendEntries from S2
+000060 LOG1 S1 Received AppendEntries from S2
+000100 CLNT S2 Received client request: Put(x, 1)
+000101 LOG1 S2 Appended entry at index 1
+000102 LOG1 S2 Replicating entry 1 to S0
+000102 LOG1 S2 Replicating entry 1 to S1
+000108 LOG1 S0 Accepted entry 1 from S2
+000109 LOG1 S1 Accepted entry 1 from S2
+000110 CMIT S2 Entry 1 committed (majority reached)
+000111 CLNT S2 Applied command Put(x, 1)
+000155 TIMR S2 Leader, checking heartbeats
+000156 LOG1 S2 Sending AppendEntries to S0
+000156 LOG1 S2 Sending AppendEntries to S1
+000200 CLNT S2 Received client request: Put(y, 2)
+000201 LOG1 S2 Appended entry at index 2
+000202 LOG1 S2 Replicating entry 2 to S0
+000202 LOG1 S2 Replicating entry 2 to S1
+000210 LOG1 S0 Accepted entry 2 from S2
+000212 DROP S1 Dropped AppendEntries (simulated network loss)
+000213 CMIT S2 Entry 2 committed (majority reached)
+000214 CLNT S2 Applied command Put(y, 2)
+000255 TIMR S2 Leader, checking heartbeats
+000256 LOG1 S2 Sending AppendEntries to S0
+000256 LOG1 S2 Sending AppendEntries to S1
+000260 LOG1 S0 Accepted heartbeat from S2
+000262 LOG1 S1 Accepted heartbeat from S2
+000300 ERRO S1 Failed to persist state: disk full
+000301 WARN S1 Retrying persist in 50ms
+000350 PERS S1 State persisted successfully
+000400 TIMR S2 Leader, checking heartbeats
+000500 DROP S0 Dropped heartbeat (simulated network loss)
+000501 DROP S1 Dropped heartbeat (simulated network loss)
+000600 TIMR S0 Election timeout elapsed
+000601 VOTE S0 Becoming candidate for term 2
+000602 VOTE S0 Requesting vote from S1
+000602 VOTE S0 Requesting vote from S2
+000605 TERM S2 Stepping down, discovered higher term 2
+000606 VOTE S1 Granting vote to S0 for term 2
+000607 VOTE S2 Granting vote to S0 for term 2
+000608 LEAD S0 Became leader for term 2
+000609 TIMR S0 Leader, checking heartbeats
+000610 LOG1 S0 Sending AppendEntries to S1
+000610 LOG1 S0 Sending AppendEntries to S2
+000700 CLNT S0 Received client request: Get(x)
+000701 TRCE S0 Reading key x = 1
+000702 CLNT S0 Responded to client: x = 1
+000800 SNAP S0 Starting snapshot at index 2
+000801 SNAP S0 Snapshot complete, 128 bytes
+000802 SNAP S0 Sending snapshot to S1
+000810 SNAP S1 Installed snapshot from S0

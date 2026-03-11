@@ -1,0 +1,41 @@
+parse:
+  pattern: '(?P<time>\d+) (?P<topic>\w{4}) (?P<source>S\d+) (?P<message>.*)'
+  timestamp_field: time
+  source_field: source
+  format_str: "{time}::{source}::{message}"
+
+styles:
+  match_field: topic
+  rules:
+    - values: [TIMR]
+      style: bright_black
+    - values: [VOTE]
+      style: bright_cyan
+    - values: [LEAD]
+      style: yellow
+    - values: [TERM]
+      style: green
+    - values: [LOG1]
+      style: blue
+    - values: [LOG2]
+      style: cyan
+    - values: [CMIT]
+      style: magenta
+    - values: [PERS]
+      style: white
+    - values: [SNAP]
+      style: bright_blue
+    - values: [DROP]
+      style: bright_red
+    - values: [CLNT]
+      style: bright_green
+    - values: [TEST]
+      style: bright_magenta
+    - values: [INFO]
+      style: bright_white
+    - values: [WARN]
+      style: bright_yellow
+    - values: [ERRO]
+      style: red
+    - values: [TRCE]
+      style: red
