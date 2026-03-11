@@ -3,7 +3,7 @@ requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "bloodhound"
+name = "loghound"
 dynamic = ["version"]
 description = "Pretty Print Log Visualizer"
 readme = "README.md"
@@ -22,16 +22,16 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/jjmaturino/bloodhound"
-Documentation = "https://jjmaturino.github.io/bloodhound/"
+Repository = "https://github.com/jjmaturino/loghound"
+Documentation = "https://jjmaturino.github.io/loghound/"
 
 [project.entry-points.nbdev]
-bloodhound = "bloodhound._modidx:d"
+loghound = "loghound._modidx:d"
 
 [tool.setuptools.dynamic]
-version = {attr = "bloodhound.__version__"}
+version = {attr = "loghound.__version__"}
 
 [tool.setuptools.packages.find]
-include = ["bloodhound"]
+include = ["loghound"]
 
 [tool.nbdev]
